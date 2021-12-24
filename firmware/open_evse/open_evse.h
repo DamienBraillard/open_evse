@@ -41,7 +41,7 @@
 #define clrBits(flags,bits) (flags &= ~(bits))
 
 #ifndef VERSION
-#define VERSION "D7.1.3"
+#define VERSION "7.1.3-3P"
 #endif // !VERSION
 
 #include "Language_default.h"   //Default language should always be included as bottom layer
@@ -62,7 +62,7 @@ typedef unsigned long time_t;
 #endif // OEV6
 
 // auto detect L1/L2
-#define AUTOSVCLEVEL
+// #define AUTOSVCLEVEL
 
 // show disabled tests before POST
 #define SHOW_DISABLED_TESTS
@@ -72,7 +72,7 @@ typedef unsigned long time_t;
 
 // Enable three-phase energy calculation
 // Note: three-phase energy will always be calculated even if EV is only using singe-phase. Ony enable if always charging 3-phase EV and aware of this limitation.
-//#define THREEPHASE
+#define THREEPHASE
 
 // charging access control - if defined, enables RAPI G4/S4 commands
 //  to enable/disable charging function
@@ -167,7 +167,7 @@ extern AutoCurrentCapacityController g_ACCController;
 
 #define TEMPERATURE_MONITORING  // Temperature monitoring support
 
-//#define HEARTBEAT_SUPERVISION // Heartbeat Supervision support
+#define HEARTBEAT_SUPERVISION // Heartbeat Supervision support
 
 #ifdef AMMETER
 
@@ -184,8 +184,8 @@ extern AutoCurrentCapacityController g_ACCController;
 #define MV_FOR_L1 120000L       // conventional for North America
 #endif
 #ifndef MV_FOR_L2
-#define MV_FOR_L2 240000L       // conventional for North America
-//  #define MV_FOR_L2 230000L   // conventional for most of the world
+// #define MV_FOR_L2 240000L       // conventional for North America
+#define MV_FOR_L2 230000L   // conventional for most of the world
 #endif
 
 // kWh Recording feature depends upon #AMMETER support
@@ -242,7 +242,7 @@ extern AutoCurrentCapacityController g_ACCController;
 
 // take out basic setup stuff that the user really shouldn't be changing,
 // which can be set via RAPI/WiFi module.. reclaims a lot of code space
-#define NOSETUP_MENU
+// #define NOSETUP_MENU
 
 // When not in menus, short press instantly stops the EVSE - another short press resumes.  Long press activates menus
 // also allows menus to be manipulated even when in State B/C
@@ -423,7 +423,7 @@ extern AutoCurrentCapacityController g_ACCController;
 
 // maximum allowable current in amps
 #define MAX_CURRENT_CAPACITY_L1 16 // J1772 Max for L1 on a 20A circuit = 16, 15A circuit = 12
-#define MAX_CURRENT_CAPACITY_L2 80 // J1772 Max for L2 = 80
+#define MAX_CURRENT_CAPACITY_L2 24 // J1772 Max for L2 = 80
 
 //J1772EVSEController
 
