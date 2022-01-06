@@ -304,9 +304,11 @@ int EvseRapiProcessor::processCmd()
 	    echo = ((u1.u8 == '0') ? 0 : 1);	      
 	    break;
 #ifdef ADVPWR
+#ifdef GFI_SELFTEST
 	  case 'F': // GFI self test
 	    g_EvseController.EnableGfiSelfTest(u1.u8);
 	    break;
+#endif      
 	  case 'G': // ground check
 	    g_EvseController.EnableGndChk(u1.u8);
 	    break;
